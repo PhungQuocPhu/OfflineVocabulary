@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		26D100F92E90419500D88AF5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D100CB2E90219D00D88AF5 /* WidgetKit.framework */; };
+		26D100FA2E90419500D88AF5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D100CD2E90219D00D88AF5 /* SwiftUI.framework */; };
+		26D101082E90419600D88AF5 /* MyFlashcardWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 26D100F82E90419500D88AF5 /* MyFlashcardWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		263F36C32E8B24670028D934 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -21,17 +27,78 @@
 			remoteGlobalIDString = 263F36B32E8B24670028D934;
 			remoteInfo = OfflineVocabulary;
 		};
+		26D101062E90419600D88AF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 263F36AC2E8B24670028D934 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26D100F72E90419500D88AF5;
+			remoteInfo = MyFlashcardWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		26D100E12E90219E00D88AF5 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				26D101082E90419600D88AF5 /* MyFlashcardWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		263F36B42E8B24670028D934 /* OfflineVocabulary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OfflineVocabulary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		263F36C22E8B24670028D934 /* OfflineVocabularyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OfflineVocabularyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		263F36CC2E8B24670028D934 /* OfflineVocabularyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OfflineVocabularyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		26D100CB2E90219D00D88AF5 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = /System/Library/Frameworks/WidgetKit.framework; sourceTree = "<absolute>"; };
+		26D100CD2E90219D00D88AF5 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = /System/Library/Frameworks/SwiftUI.framework; sourceTree = "<absolute>"; };
+		26D100F82E90419500D88AF5 /* MyFlashcardWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MyFlashcardWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		26D100E32E90237600D88AF5 /* Exceptions for "OfflineVocabulary" folder in "OfflineVocabulary" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 263F36B32E8B24670028D934 /* OfflineVocabulary */;
+		};
+		26D1010C2E90419600D88AF5 /* Exceptions for "MyFlashcardWidget" folder in "MyFlashcardWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 26D100F72E90419500D88AF5 /* MyFlashcardWidgetExtension */;
+		};
+		26D1010E2E90421400D88AF5 /* Exceptions for "OfflineVocabulary" folder in "MyFlashcardWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/VocabModels.swift,
+				Models/WidgetFlashcard.swift,
+			);
+			target = 26D100F72E90419500D88AF5 /* MyFlashcardWidgetExtension */;
+		};
+		26D101102E90457D00D88AF5 /* Exceptions for "MyFlashcardWidget" folder in "OfflineVocabulary" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				MyFlashcardWidget.swift,
+				MyFlashcardWidgetEntryView.swift,
+			);
+			target = 263F36B32E8B24670028D934 /* OfflineVocabulary */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		263F36B62E8B24670028D934 /* OfflineVocabulary */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				26D100E32E90237600D88AF5 /* Exceptions for "OfflineVocabulary" folder in "OfflineVocabulary" target */,
+				26D1010E2E90421400D88AF5 /* Exceptions for "OfflineVocabulary" folder in "MyFlashcardWidgetExtension" target */,
+			);
 			path = OfflineVocabulary;
 			sourceTree = "<group>";
 		};
@@ -43,6 +110,15 @@
 		263F36CF2E8B24670028D934 /* OfflineVocabularyUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = OfflineVocabularyUITests;
+			sourceTree = "<group>";
+		};
+		26D100FB2E90419500D88AF5 /* MyFlashcardWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				26D101102E90457D00D88AF5 /* Exceptions for "MyFlashcardWidget" folder in "OfflineVocabulary" target */,
+				26D1010C2E90419600D88AF5 /* Exceptions for "MyFlashcardWidget" folder in "MyFlashcardWidgetExtension" target */,
+			);
+			path = MyFlashcardWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -69,6 +145,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		26D100F52E90419500D88AF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26D100FA2E90419500D88AF5 /* SwiftUI.framework in Frameworks */,
+				26D100F92E90419500D88AF5 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,6 +163,8 @@
 				263F36B62E8B24670028D934 /* OfflineVocabulary */,
 				263F36C52E8B24670028D934 /* OfflineVocabularyTests */,
 				263F36CF2E8B24670028D934 /* OfflineVocabularyUITests */,
+				26D100FB2E90419500D88AF5 /* MyFlashcardWidget */,
+				26D100CA2E90219D00D88AF5 /* Frameworks */,
 				263F36B52E8B24670028D934 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,8 +175,18 @@
 				263F36B42E8B24670028D934 /* OfflineVocabulary.app */,
 				263F36C22E8B24670028D934 /* OfflineVocabularyTests.xctest */,
 				263F36CC2E8B24670028D934 /* OfflineVocabularyUITests.xctest */,
+				26D100F82E90419500D88AF5 /* MyFlashcardWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		26D100CA2E90219D00D88AF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26D100CB2E90219D00D88AF5 /* WidgetKit.framework */,
+				26D100CD2E90219D00D88AF5 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -102,10 +199,12 @@
 				263F36B02E8B24670028D934 /* Sources */,
 				263F36B12E8B24670028D934 /* Frameworks */,
 				263F36B22E8B24670028D934 /* Resources */,
+				26D100E12E90219E00D88AF5 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				26D101072E90419600D88AF5 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				263F36B62E8B24670028D934 /* OfflineVocabulary */,
@@ -163,6 +262,28 @@
 			productReference = 263F36CC2E8B24670028D934 /* OfflineVocabularyUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		26D100F72E90419500D88AF5 /* MyFlashcardWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26D101092E90419600D88AF5 /* Build configuration list for PBXNativeTarget "MyFlashcardWidgetExtension" */;
+			buildPhases = (
+				26D100F42E90419500D88AF5 /* Sources */,
+				26D100F52E90419500D88AF5 /* Frameworks */,
+				26D100F62E90419500D88AF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				26D100FB2E90419500D88AF5 /* MyFlashcardWidget */,
+			);
+			name = MyFlashcardWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = MyFlashcardWidgetExtension;
+			productReference = 26D100F82E90419500D88AF5 /* MyFlashcardWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -184,6 +305,9 @@
 						CreatedOnToolsVersion = 16.4;
 						TestTargetID = 263F36B32E8B24670028D934;
 					};
+					26D100F72E90419500D88AF5 = {
+						CreatedOnToolsVersion = 16.4;
+					};
 				};
 			};
 			buildConfigurationList = 263F36AF2E8B24670028D934 /* Build configuration list for PBXProject "OfflineVocabulary" */;
@@ -203,6 +327,7 @@
 				263F36B32E8B24670028D934 /* OfflineVocabulary */,
 				263F36C12E8B24670028D934 /* OfflineVocabularyTests */,
 				263F36CB2E8B24670028D934 /* OfflineVocabularyUITests */,
+				26D100F72E90419500D88AF5 /* MyFlashcardWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -223,6 +348,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		263F36CA2E8B24670028D934 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26D100F62E90419500D88AF5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -253,6 +385,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		26D100F42E90419500D88AF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -265,6 +404,11 @@
 			isa = PBXTargetDependency;
 			target = 263F36B32E8B24670028D934 /* OfflineVocabulary */;
 			targetProxy = 263F36CD2E8B24670028D934 /* PBXContainerItemProxy */;
+		};
+		26D101072E90419600D88AF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26D100F72E90419500D88AF5 /* MyFlashcardWidgetExtension */;
+			targetProxy = 26D101062E90419600D88AF5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -322,6 +466,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "App cần truy cập micro để ghi âm luyện nói.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "App dùng để nhận diện giọng nói cho luyện phát âm.";
+				INFOPLIST_KEY_NSSystemAdministrationUsageDescription = "";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -378,6 +525,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "App cần truy cập micro để ghi âm luyện nói.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "App dùng để nhận diện giọng nói cho luyện phát âm.";
+				INFOPLIST_KEY_NSSystemAdministrationUsageDescription = "";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -397,6 +547,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OfflineVocabulary/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Ứng dụng cần truy cập micro để ghi lại giọng nói của bạn.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Ứng dụng cần quyền nhận diện giọng nói để luyện phát âm tiếng Anh.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -436,6 +589,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OfflineVocabulary/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Ứng dụng cần truy cập micro để ghi lại giọng nói của bạn.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Ứng dụng cần quyền nhận diện giọng nói để luyện phát âm tiếng Anh.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -553,6 +709,86 @@
 			};
 			name = Release;
 		};
+		26D1010A2E90419600D88AF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MyFlashcardWidget/MyFlashcardWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CZA533758H;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyFlashcardWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyFlashcardWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.phuphung.OfflineVocabulary.MyFlashcardWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Debug;
+		};
+		26D1010B2E90419600D88AF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = MyFlashcardWidget/MyFlashcardWidget.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CZA533758H;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyFlashcardWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyFlashcardWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.phuphung.OfflineVocabulary.MyFlashcardWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -588,6 +824,15 @@
 			buildConfigurations = (
 				263F36DD2E8B24670028D934 /* Debug */,
 				263F36DE2E8B24670028D934 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26D101092E90419600D88AF5 /* Build configuration list for PBXNativeTarget "MyFlashcardWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26D1010A2E90419600D88AF5 /* Debug */,
+				26D1010B2E90419600D88AF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
