@@ -230,10 +230,8 @@ struct TopicsView: View {
     }
 
     func loadSelectedTopicIDs() -> [UUID] {
-        let groupName = "group.phungquocphu.moments"
-        let selectedTopicIDsKey = "widget_selected_topic_ids"
-        let idStrings = UserDefaults(suiteName: groupName)?.stringArray(forKey: selectedTopicIDsKey) ?? []
-        return idStrings.compactMap { UUID(uuidString: $0) }
+        let config = FileStorageHelper.loadWidgetConfig()
+        return config.selectedTopicIDs
     }
 }
 

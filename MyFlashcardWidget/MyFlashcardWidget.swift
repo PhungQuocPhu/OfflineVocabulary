@@ -18,10 +18,9 @@ struct Provider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<MyFlashcardEntry>) -> Void) {
         let entry = randomEntry()
 
-        // Đọc interval từ UserDefaults (App Group)
-        let groupName = "group.phungquocphu.moments"
-        let intervalKey = "widget_change_interval"
-        let seconds = UserDefaults(suiteName: groupName)?.integer(forKey: intervalKey) ?? 300
+        // Read interval from file-based storage (App Group)
+        let config = FileStorageHelper.loadWidgetConfig()
+        let seconds = config.changeIntervalSeconds
         let nextUpdate = Calendar.current.date(byAdding: .second, value: max(60, seconds), to: Date())!
         
         let timeline = Timeline(entries: [entry], policy: .after(nextUpdate))
@@ -29,12 +28,7 @@ struct Provider: TimelineProvider {
     }
 
     func loadFlashcardsFromAppGroup() -> [WidgetFlashcard] {
-        let groupName = "group.phungquocphu.moments"
-        if let data = UserDefaults(suiteName: groupName)?.data(forKey: "widget_flashcards"),
-           let cards = try? JSONDecoder().decode([WidgetFlashcard].self, from: data) {
-            return cards
-        }
-        return []
+        return FileStorageHelper.loadWidgetFlashcards()
     }
 
     func randomEntry() -> MyFlashcardEntry {

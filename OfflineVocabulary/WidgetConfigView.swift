@@ -83,21 +83,26 @@ struct WidgetConfigView: View {
 
     // MARK: - App Group Lưu/Đọc chủ đề đã chọn
     func saveSelectedTopicIDs(_ ids: [UUID]) {
-        let idStrings = ids.map { $0.uuidString }
-        UserDefaults(suiteName: groupName)?.set(idStrings, forKey: selectedTopicIDsKey)
+        var config = FileStorageHelper.loadWidgetConfig()
+        config.selectedTopicIDs = ids
+        FileStorageHelper.saveWidgetConfig(config)
     }
+    
     func loadSelectedTopicIDs() -> [UUID] {
-        let idStrings = UserDefaults(suiteName: groupName)?.stringArray(forKey: selectedTopicIDsKey) ?? []
-        return idStrings.compactMap { UUID(uuidString: $0) }
+        let config = FileStorageHelper.loadWidgetConfig()
+        return config.selectedTopicIDs
     }
 
     // MARK: - Lưu/Đọc thời gian đổi từ cho Widget
     func saveWidgetChangeInterval(_ seconds: Int) {
-        UserDefaults(suiteName: groupName)?.set(seconds, forKey: changeIntervalKey)
+        var config = FileStorageHelper.loadWidgetConfig()
+        config.changeIntervalSeconds = seconds
+        FileStorageHelper.saveWidgetConfig(config)
     }
+    
     func loadWidgetChangeInterval() -> Int {
-        let seconds = UserDefaults(suiteName: groupName)?.integer(forKey: changeIntervalKey) ?? 0
-        return (seconds > 0) ? seconds : 300 // mặc định 5 phút
+        let config = FileStorageHelper.loadWidgetConfig()
+        return config.changeIntervalSeconds
     }
 
     // MARK: - Đồng bộ dữ liệu widget tự động
@@ -126,9 +131,6 @@ struct WidgetConfigView: View {
 
     // MARK: - Lưu flashcards cho widget vào App Group
     func saveFlashcardsToAppGroup(_ cards: [WidgetFlashcard]) {
-        let groupName = "group.phungquocphu.moments"
-        if let data = try? JSONEncoder().encode(cards) {
-            UserDefaults(suiteName: groupName)?.set(data, forKey: "widget_flashcards")
-        }
+        FileStorageHelper.saveWidgetFlashcards(cards)
     }
 }
